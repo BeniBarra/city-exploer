@@ -15,7 +15,8 @@ class Main extends React.Component {
       displayName: '',
       lon:'',
       lat:'',
-      staticMap:''
+      staticMap:'',
+      errorCode:''
     };
   }
 
@@ -25,28 +26,31 @@ class Main extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-
-    const key = process.env.REACT_APP_EXPLORER;
-
-    let URL = `https://us1.locationiq.com/v1/search.php?key=${key}&q=${this.state.city}&format=json`;
-
-    const response = await axios.get(URL);
-
-    const cityInformation = response.data[0];
-
-    let cityName = cityInformation.display_name;
-    let lonData = cityInformation.lon;
-    let latData = cityInformation.lat;
-
+    
+    try{
+      const key = process.env.REACT_APP_EXPLORER;
+      
+      let URL = `https://us1.locationiq.com/v1/search.php?key=${key}&q=${this.state.city}&format=json`;
+      
+      const response = await axios.get(URL);
+      
+      const cityInformation = response.data[0];
+      
+      let cityName = cityInformation.display_name;
+      let lonData = cityInformation.lon;
+      let latData = cityInformation.lat;
+      
       this.setState({
         displayName: cityName,
         lon: lonData,
         lat: latData
       })
-
+      
       this.displayMap();
-
-     console.log(cityInformation)
+    }
+    catch(err){
+      this.setState({errorCode: err.message})
+    }
   }
 
   displayMap = async () => {
@@ -64,7 +68,9 @@ class Main extends React.Component {
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
         />
+
         <h2 id='city'>City: {this.state.displayName}</h2>
+
         <Container>
           <Row>
             <Col xs={6} md={4}>
@@ -72,8 +78,13 @@ class Main extends React.Component {
             </Col>
           </Row>
           <h4 id='lat'>Latitude: {this.state.lat}</h4>
-        <h4 id='lon'>Longitude: {this.state.lon}</h4>
+          <h4 id='lon'>Longitude: {this.state.lon}</h4>
         </Container>
+
+        <Container>
+          <h4>{this.state.errorCode}</h4>
+        </Container>
+
         <CityInfo></CityInfo>
       </>
     );
