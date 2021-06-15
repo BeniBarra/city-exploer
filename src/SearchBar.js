@@ -5,12 +5,6 @@ import Button from 'react-bootstrap/Button'
 
 
 class SearchBar extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //   }
-  // }
-
   changeHandler = (e) => {
     e.preventDefault();
     console.log(e.target.value)
@@ -22,10 +16,10 @@ class SearchBar extends React.Component {
       <>
       <Form onSubmit={this.props.handleSubmit}>
         <Form.Group controlId='city'>
-          <Form.Label>City:</Form.Label>
-          <Form.Control placeholder='City' onChange={this.changeHandler}></Form.Control>
+          <Form.Label></Form.Label>
+          <Form.Control placeholder='Enter a City here' onChange={this.changeHandler}></Form.Control>
         </Form.Group>
-        <Button variant='primary' type='submit'>Explore</Button>
+        <Button variant='success' type='submit'>Explore</Button>
       </Form>
       </>
     );

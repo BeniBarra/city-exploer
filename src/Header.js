@@ -6,7 +6,8 @@ class TopHeader extends React.Component {
   render() {
     return (
       <>
-        <header>Hello World</header>
+        <title>City Explorer</title>
+        <header>City Explorer</header>
       </>
     );
   }
