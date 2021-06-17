@@ -31,6 +31,8 @@ class Main extends React.Component {
     try {
       const key = process.env.REACT_APP_EXPLORER;
 
+
+
       let URL = `https://us1.locationiq.com/v1/search.php?key=${key}&q=${this.state.city}&format=json`;
 
       const response = await axios.get(URL);
@@ -49,12 +51,15 @@ class Main extends React.Component {
 
       this.displayMap();
 
-      let weatherData = await axios.get(`http://localhost:3001/weather?lat=${this.state.lat}&lon=${this.state.lon}&searchQuery=${this.state.displayName.split(',')[0]}`)
+      let weatherData = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/weather?lat=${this.state.lat}&lon=${this.state.lon}`);
+      let movieData = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/movies?movie=${this.state.displayName.split(',')[0]}`);
       
       console.log(weatherData);
+      console.log(movieData);
 
       this.setState({
-        weather: weatherData.data
+        weather: weatherData.data,
+        movie: movieData.data
       });
     }
     catch (err) {
@@ -94,7 +99,10 @@ class Main extends React.Component {
         </Container>
 
         <Container>
-          {this.state.weather ? <Weather weather={this.state.weather}/> : ''}
+          {(this.state.weather && this.state.movie) ? <Weather
+            weather={this.state.weather}
+            movie={this.state.movie}
+            /> : ''}
         </Container>
 
         <CityInfo></CityInfo>

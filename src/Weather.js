@@ -13,8 +13,15 @@ class Weather extends React.Component {
               <h3>{weather.description}</h3>
             </>)}
         </Tab>
-        <Tab eventKey="moveis" title="Movies">
-          <h3></h3>
+        <Tab eventKey="movies" title="Movies">
+          {this.props.movie.map(movie =>
+            <>
+              <h3>{movie.title}</h3>
+              <h3>{movie.release_date}</h3>
+              <h3>{movie.overview}</h3>
+              <h3>{movie.popularity}</h3>
+            </>
+          )}
         </Tab>
       </Tabs>
     )
