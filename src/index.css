@@ -1,5 +1,5 @@
 body {
-  size: 100vh;
+  height: 100vh;
   background-image: url(https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d29ybGR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80);
   background-size:cover;
   background-repeat: no-repeat;
@@ -19,22 +19,28 @@ code {
 header {
   font-size: 4em;
   color: whitesmoke;
-  -webkit-text-stroke-width: .8px;
-  -webkit-text-stroke-color: black;
+  /* -webkit-text-stroke-width: .8px;
+  -webkit-text-stroke-color: black; */
 }
 
 h2 {
   color: whitesmoke;
-  -webkit-text-stroke-width: .5px;
-  -webkit-text-stroke-color: black;
+  /* -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: black; */
+}
+
+h3 {
+  color: whitesmoke;
+  /* -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: black; */
 }
 
 h4 {
   color: whitesmoke;
-  -webkit-text-stroke-width: .5px;
-  -webkit-text-stroke-color: black;
+  /* -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: black; */
 }
 
 img {
-  border: solid 5px rgb(74, 135, 100);
+  border: solid 15px rgb(74, 135, 100);
 }
