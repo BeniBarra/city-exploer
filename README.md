@@ -1,19 +1,26 @@
-# City Explorer
+# City Explorer Front End
+
+## Check out the deployed Front end at: [https://bento-city-explorer.netlify.app/](https://bento-city-explorer.netlify.app/)
 
 **Author**: Benjamin Ibarra
 **Version**: 1.0.0
 
 ## Overview
-A search engine that helps the user find information pertinent to the desired location.
+city-explorer is a small app intended to allow users to search a city and quickly see a small map of the city, along with some daily weather data, and movies with the cities setting.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+Establish what you want your site users to be able to search for. Find build out a friend end that will take in user input, and use that input to send requests to server side APIs, determine the data you wish to display from the API, and work with the Back-end to achieve the desired results
 
 ## Architecture
-Built with React, React-bootstrap, React-axios, Javascript, on VS Code, deployed through netlify
+React-bootstrap, axios, coded with JavaScript on VS Code.
 
 ## Change Log
-6-14-2021 1:40pm commiy inital folders and files for project start
+- Front end Developed 
 
 ## Credit and Collaborations
-Thanks to Michelle Ferreirae, John Cokos, Joshua Haddock
+- Huge thanks to Miriam Silve and Steven Boston for picking on my silly mistakes whenI couldn't see them.
+
+- Thanks to AJ and Alex Vogt for prinicpal design brainstroming!
+
+### Local front-end to back-end WRRC 
+![WRRC](https://i.imgur.com/4OhIpHn.png)
