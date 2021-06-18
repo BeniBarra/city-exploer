@@ -70,7 +70,7 @@ class Main extends React.Component {
   displayMap = async () => {
     const key = process.env.REACT_APP_EXPLORER;
 
-    let mapURL = `https://maps.locationiq.com/v3/staticmap?key=${key}&center=${this.state.lat},${this.state.lon}&zoom='1'&size=600x600`;
+    let mapURL = `https://maps.locationiq.com/v3/staticmap?key=${key}&center=${this.state.lat},${this.state.lon}&zoom='1'&size=500x500`;
 
     this.setState({ staticMap: mapURL })
   }
@@ -88,10 +88,10 @@ class Main extends React.Component {
         <Container>
           <Row>
             <Col xs={6} md={4}>
-              <Image src={this.state.staticMap} roundedCircle alt='' />
+              <Image src={this.state.staticMap} rounded alt='' />
             </Col>
           </Row>
-          <h4 id='lat'>Lat/Lon: {this.state.lat} {this.state.lon}</h4>
+          <h4 id='lat'>Lat, Lon: {this.state.lat}, {this.state.lon}</h4>
         </Container>
 
         <Container>
@@ -99,10 +99,9 @@ class Main extends React.Component {
         </Container>
 
         <Container>
-          {(this.state.weather && this.state.movie) ? <Weather
-            weather={this.state.weather}
-            movie={this.state.movie}
-            /> : ''}
+          { (this.state.weather && this.state.movie) ?
+          <Weather weather={this.state.weather}
+          movie={this.state.movie}/> : '' }
         </Container>
 
         <CityInfo></CityInfo>
