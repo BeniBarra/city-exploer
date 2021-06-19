@@ -1,8 +1,4 @@
 body {
-  height: 100vh;
-  background-image: url(https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d29ybGR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80);
-  background-size:cover;
-  background-repeat: no-repeat;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -42,5 +38,5 @@ h4 {
 }
 
 img {
-  border: solid 15px rgb(74, 135, 100);
+  border: solid 8px rgb(104, 128, 107);
 }

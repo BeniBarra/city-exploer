@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
           <Form.Label></Form.Label>
           <Form.Control placeholder='Enter a City here' onChange={this.changeHandler}></Form.Control>
         </Form.Group>
-        <Button variant='success' type='submit'>Explore</Button>
+        <Button variant='light' type='submit'>Explore</Button>
       </Form>
       </>
     );

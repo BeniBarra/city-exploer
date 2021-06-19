@@ -8,17 +8,17 @@ class Weather extends React.Component {
     return (
       <Tabs defaultActiveKey="weather" id="uncontrolled-tab-example">
         <Tab eventKey="weather" title="Local Weather">
-            {this.props.weather.slice(0, 3).map(weather =>
+            {this.props.weather.slice(0, 10).map(weather =>
               <Card key={weather.date}>
                 <Card.Body>
-                  <Card.Text>Date: {weather.description}</Card.Text>
-                  <Card.Text>Estimated: {weather.date}</Card.Text>
+                  <Card.Text>Date: {weather.time}</Card.Text>
+                  <Card.Text>Estimated: {weather.forecast}</Card.Text>
                 </Card.Body>
               </Card>
             )}
         </Tab>
         <Tab eventKey="movies" title="Movies">
-          {this.props.movie.slice(0, 1).map(movie =>
+          {this.props.movie.slice(0, 10).map(movie =>
               <Card key={movie.title}>
                 <Card.Body>
                   <Card.Text>{movie.title}</Card.Text>
